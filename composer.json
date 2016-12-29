@@ -1,0 +1,19 @@
+{
+	"name": "jpuck/semantic-scale",
+	"description": "Wordpress plugin grades posts on specific word content",
+	"license": "GPL-3.0+",
+	"authors": [
+		{
+			"name": "Jeff Puckett",
+			"email": "jeff@jeffpuckett.com"
+		}
+	],
+	"require": {
+		"php": "^7.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"jpuck\\wordpress\\plugins\\SemanticScale\\": "src/"
+		}
+	}
+}
