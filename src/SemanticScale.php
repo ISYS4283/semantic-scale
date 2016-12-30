@@ -8,16 +8,22 @@ class SemanticScale {
 	}
 
 	public function __construct() {
+		// TODO: use configuration manager
+		$this->wordsource = new WordSourceJsonFile(__DIR__.'/../scratch.json');
+
 		add_filter( 'the_content', array( $this, 'the_content' ) );
 		add_action( 'save_post',   array( $this, 'save_post' ), 1, 3 );
 	}
 
 	public function the_content($input) {
-		$content = get_post_meta( get_the_ID(), 'semantic-scale-mod', true );
-		return $input . "<p>Semantic Scale last modified: $content</p>";
+		$grade = get_post_meta( get_the_ID(), 'semantic-scale', true );
+		// TODO: handle if empty
+		// TODO: add output class
+		return $input . "<p>Semantic Scale: $grade</p>";
 	}
 
 	public function save_post(int $post_ID, \WP_Post $post, bool $update) {
-		update_post_meta( $post_ID, 'semantic-scale-mod', gmdate("Y-m-d H:i:s") );
+		$scaler = new Scaler($post, $this->wordsource);
+		update_post_meta( $post_ID, 'semantic-scale', $scaler->grade() );
 	}
 }
