@@ -4,9 +4,46 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ecf58d0ab83e3e9bb33b10d82013d54e",
-    "content-hash": "93bad9e5d77a4574812f573bfe2b1770",
+    "hash": "cf16e1482d9d58f56e73eab4b229ecfc",
+    "content-hash": "a9df7fa268175e50b72888e3347b40f7",
     "packages": [
+        {
+            "name": "jpuck/php-bootstrap-progress-bar",
+            "version": "1.2.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MyTeamName/php-bootstrap-progress-bar.git",
+                "reference": "a4dd400d93138319ead1edd65e4671596fafffb2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MyTeamName/php-bootstrap-progress-bar/zipball/a4dd400d93138319ead1edd65e4671596fafffb2",
+                "reference": "a4dd400d93138319ead1edd65e4671596fafffb2",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.0",
+                "twig/twig": "^1.30"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "jpuck\\php\\bootstrap\\ProgressBar\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Jeff Puckett",
+                    "email": "jeff@jeffpuckett.com"
+                }
+            ],
+            "description": "Create static Bootstrap Progress Bars using PHP.",
+            "time": "2016-12-31 04:26:12"
+        },
         {
             "name": "nesbot/carbon",
             "version": "1.21.0",
@@ -176,6 +213,67 @@
             "description": "Symfony Translation Component",
             "homepage": "https://symfony.com",
             "time": "2016-11-30 14:40:17"
+        },
+        {
+            "name": "twig/twig",
+            "version": "v1.30.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/twigphp/Twig.git",
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/twigphp/Twig/zipball/c6ff71094fde15d12398eaba029434b013dc5e59",
+                "reference": "c6ff71094fde15d12398eaba029434b013dc5e59",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.2.7"
+            },
+            "require-dev": {
+                "symfony/debug": "~2.7",
+                "symfony/phpunit-bridge": "~3.2@dev"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.30-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Twig_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Armin Ronacher",
+                    "email": "armin.ronacher@active-4.com",
+                    "role": "Project Founder"
+                },
+                {
+                    "name": "Twig Team",
+                    "homepage": "http://twig.sensiolabs.org/contributors",
+                    "role": "Contributors"
+                }
+            ],
+            "description": "Twig, the flexible, fast, and secure template language for PHP",
+            "homepage": "http://twig.sensiolabs.org",
+            "keywords": [
+                "templating"
+            ],
+            "time": "2016-12-23 11:06:22"
         }
     ],
     "packages-dev": [],

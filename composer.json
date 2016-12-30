@@ -10,7 +10,8 @@
 	],
 	"require": {
 		"php": "^7.0",
-		"nesbot/carbon": "^1.21"
+		"nesbot/carbon": "^1.21",
+		"jpuck/php-bootstrap-progress-bar": "^1.2"
 	},
 	"autoload": {
 		"psr-4": {
