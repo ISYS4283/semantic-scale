@@ -4,11 +4,7 @@ class SemanticScale {
 	private static $instance;
 
 	public static function get_instance() {
-		if ( ! self::$instance ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
+		return static::$instance ?? static::$instance = new static();
 	}
 
 	public function __construct() {
