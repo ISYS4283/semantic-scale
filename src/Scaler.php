@@ -10,7 +10,7 @@ class Scaler {
 		$wordcount = 0;
 		foreach ($words as $word) {
 			foreach ($word as $alias) {
-				if ( false !== strpos($content, $alias) ) {
+				if ( false !== strpos($content, strtolower($alias)) ) {
 					$wordcount++;
 					continue;
 				}
