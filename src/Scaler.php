@@ -4,7 +4,7 @@ class Scaler {
 	protected $grade = 0;
 
 	public function __construct(\WP_Post $post, WordSource $wordsource) {
-		$words = $wordsource->fetch($post->post_date);
+		$words = $wordsource->fetch($post);
 		$content = strtolower($post->post_content);
 
 		$wordcount = 0;

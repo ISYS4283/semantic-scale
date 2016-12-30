@@ -20,8 +20,8 @@ class WordSourceJsonFile implements WordSource {
 		}
 	}
 
-	public function fetch($date) : Array {
-		$date = new Carbon($date);
+	public function fetch(\WP_Post $post) : Array {
+		$date = new Carbon($post->post_date);
 
 		foreach ($this->json as $period) {
 			$start  = Carbon::createFromFormat('Y-m-d', $period['start'],  'America/Chicago');
