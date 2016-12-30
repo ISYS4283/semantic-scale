@@ -1,1 +1,19 @@
-{"something":"else"}
+[
+	{
+		"start"  : "2016-12-18",
+		"finish" : "2016-12-22",
+		"words"  : [
+			[
+				"entity relationship diagram",
+				"erd",
+				"e.r.d."
+			],
+			[
+				"create, read, update, delete",
+				"create read update delete",
+				"crud",
+				"c.r.u.d."
+			]
+		]
+	}
+]

@@ -21,13 +21,18 @@ class WordSourceJsonFile implements WordSource {
 	}
 
 	public function fetch($date) : Array {
-		// TODO: search JSON for week
 		$date = new Carbon($date);
 
-		return $words ?? [
-			['entity relationship diagram', 'erd', 'e.r.d.'],
-			['create, read, update, delete', 'create read update delete', 'crud', 'c.r.u.d.'],
-			['something else', 'nada'],
-		];
+		foreach ($this->json as $period) {
+			$start  = Carbon::createFromFormat('Y-m-d', $period['start'],  'America/Chicago');
+			$finish = Carbon::createFromFormat('Y-m-d', $period['finish'], 'America/Chicago');
+
+			if ( $date->between($start, $finish) ) {
+				$words = $period['words'];
+				break;
+			}
+		}
+
+		return $words ?? [];
 	}
 }
