@@ -11,7 +11,7 @@ class SemanticScale {
 
 	public function __construct() {
 		// TODO: use configuration manager
-		$this->wordsource = new WordSourceJsonFile(__DIR__.'/../scratch.json');
+		$this->wordsource = new WordSourceJsonFile(__DIR__.'/../words.json');
 
 		add_action( 'wp_head',     array( ProgressBar::class, 'wp_head' ) );
 		add_filter( 'the_content', array( $this, 'the_content' ) );

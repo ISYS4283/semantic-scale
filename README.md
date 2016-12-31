@@ -8,10 +8,19 @@ words in a post.
 * Follow the Wordpress instructions for [Manual Plugin Installation][1].
 * Using [composer][2] from the plugin directory, run `composer install`
 
+        cd wp-content/plugins
+        git clone https://github.com/ISYS4283/semantic-scale.git
+        cd semantic-scale
+        composer install
+        touch words.json
+
+Then activate plugin in Wordpress admin panel.
+
 ## Word Source JSON
 
-Create a JSON file with an array of period objects containing the start and
-finish dates as well as a words array of alias arrays.
+Create a `words.json` file in the plugin root directory with an array of period
+objects containing the start and finish dates as well as a words array of
+aliases.
 
 For example:
 
