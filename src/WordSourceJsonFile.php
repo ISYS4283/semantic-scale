@@ -24,8 +24,8 @@ class WordSourceJsonFile implements WordSource {
 		$date = new Carbon($post->post_date);
 
 		foreach ($this->json as $period) {
-			$start  = Carbon::createFromFormat('Y-m-d', $period['start'],  'America/Chicago');
-			$finish = Carbon::createFromFormat('Y-m-d', $period['finish'], 'America/Chicago');
+			$start  = Carbon::createFromFormat('Y-m-d', $period['start'],  'America/Chicago')->startOfDay();
+			$finish = Carbon::createFromFormat('Y-m-d', $period['finish'], 'America/Chicago')->endOfDay();
 
 			if ( $date->between($start, $finish) ) {
 				$words = $period['words'];

@@ -22,6 +22,12 @@ Create a `words.json` file in the plugin root directory with an array of period
 objects containing the start and finish dates as well as a words array of
 aliases.
 
+Note that the start and finish dates are time inclusive:
+00:00:00.000000 and 23:59:59.000000 respectively.
+
+Ensure that your date periods do not overlap.
+This may lead to unexpected behavior.
+
 For example:
 
 ```json
@@ -44,7 +50,7 @@ For example:
 		]
 	},
 	{
-		"start"  : "2016-12-22",
+		"start"  : "2016-12-23",
 		"finish" : "2017-01-03",
 		"words"  : [
 			[
