@@ -1,0 +1,35 @@
+[
+    {
+        "start"  : "2016-12-18",
+        "finish" : "2016-12-22",
+        "words"  : [
+            [
+                "entity relationship diagram",
+                "erd",
+                "e.r.d."
+            ],
+            [
+                "create, read, update, delete",
+                "create read update delete",
+                "crud",
+                "c.r.u.d."
+            ]
+        ]
+    },
+    {
+        "start"  : "2016-12-23",
+        "finish" : "2017-01-03",
+        "words"  : [
+            [
+                "data definition language",
+                "ddl",
+                "d.d.l."
+            ],
+            [
+                "data manipulation language",
+                "dml",
+                "d.m.l."
+            ]
+        ]
+    }
+]
