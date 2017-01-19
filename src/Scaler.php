@@ -3,7 +3,7 @@
 class Scaler {
 	protected $grade = 0;
 
-	public function __construct(\WP_Post $post, WordSource $wordsource) {
+	public function __construct(\WP_Post $post, WordSource $wordsource, array $options = []) {
 		$words = $wordsource->fetch($post);
 		$content = strtolower($post->post_content);
 
@@ -13,6 +13,9 @@ class Scaler {
 				if ( false !== strpos($content, strtolower($alias)) ) {
 					$wordcount++;
 					continue 2;
+				}
+				if ( !empty($options['echo-missed']) && !next($word) ) {
+					echo $alias.PHP_EOL;
 				}
 			}
 		}
