@@ -12,12 +12,12 @@ class Scaler {
 			foreach ($word as $alias) {
 				if ( false !== strpos($content, strtolower($alias)) ) {
 					$wordcount++;
-					continue;
+					continue 2;
 				}
 			}
 		}
 
-		$this->grade = (int)( ($wordcount/count($words)) * 100 );
+		$this->grade = (int)round( ($wordcount/count($words)) * 100 );
 	}
 
 	public function grade() {
