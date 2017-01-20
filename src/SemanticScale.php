@@ -19,11 +19,15 @@ class SemanticScale {
 	}
 
 	public function the_content($input) {
-		$grade = (int) get_post_meta( get_the_ID(), 'semantic-scale', true );
+		if ( get_post_type() === 'post' ) {
+			$grade = (int) get_post_meta( get_the_ID(), 'semantic-scale', true );
 
-		$progressbar = new ProgressBar($grade);
+			$progressbar = new ProgressBar($grade);
 
-		return $input . "<hr/><p><strong>Semantic Scale:</strong>$progressbar</p>";
+			$input .= "<hr/><p><strong>Semantic Scale:</strong>$progressbar</p>";
+		}
+
+		return $input;
 	}
 
 	public function save_post(int $post_ID, \WP_Post $post, bool $update) {
