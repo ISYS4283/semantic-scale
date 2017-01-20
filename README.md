@@ -3,6 +3,8 @@
 This Wordpress plugin will provide a percentage grade for presence of specific
 words in a post.
 
+Requires PHP 7 and tested with Wordpress 4.7.1
+
 ## Installation
 
 * Follow the Wordpress instructions for [Manual Plugin Installation][1].
@@ -68,5 +70,19 @@ For example:
 ]
 ```
 
+## Leaderboard
+
+If you're using the twentyseventeen theme, then you can make a symlink to a
+special page template which will display a leaderboard for the network.
+
+        cd wp-content/themes/twentyseventeen
+        ln -s ../../plugins/semantic-scale/themes/twentyseventeen/leaderboard.php semantic-scale-leaderboard.php
+
+Then create a new page and you will see "Semantic Scale Leaderboard" in the
+template dropdown within the page attributes side panel.
+
+![Screenshot of template dropdown within the page attributes side panel][3]
+
 [1]:https://codex.wordpress.org/Managing_Plugins#Manual_Plugin_Installation
 [2]:https://getcomposer.org/
+[3]:./docs/images/leaderboard-page-attributes.png
