@@ -11,6 +11,8 @@
  * @version 1.0
  */
 
+use jpuck\wordpress\plugins\SemanticScale\Leaderboard;
+
 get_header();
 the_post();
 ?>
@@ -28,6 +30,9 @@ the_post();
 				}
 			</style>
 			<?php
+
+			echo new Leaderboard;
+
 			the_content();
 
 			// If comments are open or we have at least one comment, load up the comment template.
