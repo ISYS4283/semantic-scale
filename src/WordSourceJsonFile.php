@@ -20,7 +20,11 @@ class WordSourceJsonFile implements WordSource {
 		}
 	}
 
-	public function fetch(\WP_Post $post) : Array {
+	public function fetch(\WP_Post $post = null) : Array {
+		if ( is_null($post) ) {
+			return $this->json;
+		}
+
 		$date = new Carbon($post->post_date);
 
 		foreach ($this->json as $period) {
