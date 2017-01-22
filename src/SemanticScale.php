@@ -40,7 +40,9 @@ class SemanticScale {
 	}
 
 	public function save_post(int $post_ID, \WP_Post $post, bool $update) {
-		$scaler = new Scaler($post, $this->wordsource());
-		update_post_meta( $post_ID, 'semantic-scale', $scaler->grade() );
+		if ( get_post_type() === 'post' ) {
+			$scaler = new Scaler($post, $this->wordsource());
+			update_post_meta( $post_ID, 'semantic-scale', $scaler->grade() );
+		}
 	}
 }
