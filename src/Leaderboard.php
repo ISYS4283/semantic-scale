@@ -26,7 +26,7 @@ class Leaderboard {
 	protected function get_scores() {
 		foreach ( $this->get_blogs() as $blog ) {
 			$sql = "
-				SELECT p.post_date, p.guid, pm.meta_value AS 'score'
+				SELECT p.post_modified, p.guid, pm.meta_value AS 'score'
 				FROM wp_{$blog['blog_id']}_posts p
 				LEFT JOIN wp_{$blog['blog_id']}_postmeta pm
 				   ON p.ID = pm.post_id
@@ -46,7 +46,7 @@ class Leaderboard {
 		if ( !empty($array) ) {
 			// sort by date first for default tie-breaker order
 			usort($array, function($a, $b){
-				return $a['post_date'] <=> $b['post_date'];
+				return $a['post_modified'] <=> $b['post_modified'];
 			});
 
 			// then actually rank by score (ties should preserve older first)
