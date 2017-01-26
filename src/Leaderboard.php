@@ -33,6 +33,7 @@ class Leaderboard {
 				WHERE p.post_type   = 'post'
 				  AND p.post_status = 'publish'
 				  AND pm.meta_key   = 'semantic-scale'
+				  AND DATE(p.post_date) BETWEEN '2017-01-25' AND '2017-01-27'
 				ORDER BY p.post_date
 				LIMIT 1;
 			";
