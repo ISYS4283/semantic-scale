@@ -54,6 +54,11 @@ class Leaderboard {
 			usort($array, function($a, $b){
 				return $b['score'] <=> $a['score'];
 			});
+
+			$rank = 0;
+			foreach ( $array as &$element ) {
+				$element['rank'] = ++$rank;
+			}
 		}
 
 		return $array ?? [];
@@ -68,10 +73,9 @@ class Leaderboard {
 				<th>Post</th>
 			</tr></thead><tbody>";
 
-		$rank = 1;
 		foreach ( $this->get_scores() as $blog ) {
 			$blogs .= "<tr>";
-			$blogs .= "<td>".$rank++."</td>";
+			$blogs .= "<td>$blog[rank]</td>";
 			$blogs .= "<td>$blog[score]</td>";
 			$blogs .= "<td>$blog[name]</td>";
 			$blogs .= "<td><a href='$blog[guid]'>$blog[guid]</a></td>";
