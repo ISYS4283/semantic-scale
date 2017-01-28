@@ -86,4 +86,8 @@ class Leaderboard {
 	public function __toString() {
 		return $this->render();
 	}
+
+	public static function get_scores_rest_ensure_response() {
+		return rest_ensure_response( (new Leaderboard)->get_scores() );
+	}
 }
